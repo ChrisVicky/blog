@@ -5,7 +5,7 @@ keywords: null
 author: Jinfan LIU
 language: en
 timezone: ""
-url: https://chrisvicky.github.io/blog/
+url: https://chrisvicky.github.io/
 permalink: ":year/:month/:day/:title/"
 permalink_defaults: null
 pretty_urls:
