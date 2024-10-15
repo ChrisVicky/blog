@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Deploy Hadoop with VirtualBox | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This post is a reminder of hadoop deployment on Arch Linux and virtualbox (with vagrant) Related Github Repo contains resource:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy Hadoop with VirtualBox">
+<meta property="og:url" content="http://example.com/2024/10/15/2022-11-15-deploy-hadoop/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="This post is a reminder of hadoop deployment on Arch Linux and virtualbox (with vagrant) Related Github Repo contains resource:">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/image_2022-11-16-00-30-34.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-23-47-12.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-04-25.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-07-10.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-08-01.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-11-20.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-22-03.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-33-19.png">
+<meta property="og:image" content="http://example.com/img/image_2022-11-15-22-33-51.png">
+<meta property="article:published_time" content="2024-10-15T12:21:14.245Z">
+<meta property="article:modified_time" content="2024-10-15T12:21:14.245Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hadoop">
+<meta property="article:tag" content="Big Data">
+<meta property="article:tag" content="課程作業">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/image_2022-11-16-00-30-34.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2022-11-15-deploy-hadoop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/15/2022-11-15-deploy-hadoop/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T12:21:14.245Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Deploy Hadoop with VirtualBox
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>This post is a reminder of hadoop deployment on Arch Linux and virtualbox (with vagrant)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/hadoop-vm">Related Github Repo contains resource:</a></li>
+</ul>
+<span id="more"></span>
+
+<center>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+        src="/img/image_2022-11-16-00-30-34.png"><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">system information</div>
+</center>
+
+
+
+<hr>
+<h2 id="Pre-Requirement"><a href="#Pre-Requirement" class="headerlink" title="Pre-Requirement"></a>Pre-Requirement</h2><ol>
+<li>VirtualBox</li>
+<li>vagrant</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+        src="/img/image_2022-11-15-23-47-12.png"><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">virtualbox and vagrant</div>
+</center>
+
+<ol start="3">
+<li>Access to Internet<ul>
+<li>The base OS we choose to deploy Hadoop Cluster is Ubuntu 16, thus we should be able to fetch “ubuntu&#x2F;xenial64” from <a target="_blank" rel="noopener" href="https://app.vagrantup.com/boxes/search">vagrant cloud</a>.</li>
+<li>Also, the first step in your vm is to update and install necessary applications such as <code>ssh</code>, <code>rsync</code> and <code>vim</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="1-Ingredients-checkup"><a href="#1-Ingredients-checkup" class="headerlink" title="1. Ingredients checkup"></a>1. Ingredients checkup</h3><ul>
+<li>Make sure the Directory has the following structure</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── cache                               -- Files to replace in VM</span><br><span class="line">│   ├── core-site.xml                   -- replace /usr/local/hadoop/etc/hadoop/core-site.xml in VM</span><br><span class="line">│   ├── hadoop-2.9.0.tar.gz             -- hadoop </span><br><span class="line">│   ├── hdfs-site.xml                   -- replace /usr/local/hadoop/etc/hadoop/hdfs-site.xml in VM </span><br><span class="line">│   ├── hosts                           -- replace /usr/hosts in VM</span><br><span class="line">│   ├── jdk-8u161-linux-x64.tar.gz      -- jdk package</span><br><span class="line">│   ├── mapred-site.xml                 -- replace /usr/local/hadoop/etc/hadoop/mapred-site.xml</span><br><span class="line">│   ├── scala-2.11.8.tgz                -- scala package</span><br><span class="line">│   ├── sources.list                    -- replace /etc/apt/sources.list -&gt; from https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</span><br><span class="line">│   ├── spark-2.3.0-bin-hadoop2.7.tgz   -- spark package</span><br><span class="line">│   └── yarn-site.xml                   -- replace /usr/local/hadoop/etc/hadoop/yarn-site.xml</span><br><span class="line">├── hadoop+spark集群平台搭建.pptx       -- ppt instruction for Hadoop + spark on VMware</span><br><span class="line">├── Hadoop集群安装手册.pdf              -- PDF instruction for Hadoop on VMware based on CentOS</span><br><span class="line">├── hadoop集群搭建.pptx                 -- ppt instruction for Hadoop on VMware based on Ubuntu -- Instruction for this Virtualbox Version</span><br><span class="line">├── img                                 -- IMGs in this readme file</span><br><span class="line">├── init.sh                             -- Scripts to execute when VM first starts</span><br><span class="line">├── README.md                           -- This file</span><br><span class="line">└── Vagrantfile                         -- VM Configurations</span><br><span class="line"></span><br><span class="line">2 directories, 26 files</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Check-init-sh-and-Vagrantfile-for-certain-configurations"><a href="#2-Check-init-sh-and-Vagrantfile-for-certain-configurations" class="headerlink" title="2. Check init.sh and Vagrantfile for certain configurations"></a>2. Check init.sh and Vagrantfile for certain configurations</h3><ol>
+<li>The default configuration for Virtual Machines is written in <code>Vagrantfile</code>. Modifications can be made by changing the code directly.</li>
+<li>Check up init.sh for more setups.</li>
+</ol>
+<h3 id="3-Execute-Vagrant-Up"><a href="#3-Execute-Vagrant-Up" class="headerlink" title="3. Execute Vagrant Up"></a>3. Execute Vagrant Up</h3><ul>
+<li><p>In the directory shown above, execute <code>vagrant up</code> to setup and boot your vm.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant up </span><br></pre></td></tr></table></figure>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+      src="/img/image_2022-11-15-22-04-25.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">Commands to Execute</div>
+</center>
+</li>
+<li><p>It should take a while. So have a cup of tea and when everything is settled, check your virutal machine with either <code>vagrant status</code> or <code>virtualbox user interface</code></p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant status</span><br></pre></td></tr></table></figure>
+<center>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+        src="/img/image_2022-11-15-22-07-10.png"><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">vagrant status</div>
+</center>
+<center>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+        src="/img/image_2022-11-15-22-08-01.png"><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">virtualbox user interface</div>
+</center>
+
+<h3 id="4-ssh-configurations"><a href="#4-ssh-configurations" class="headerlink" title="4. ssh configurations"></a>4. ssh configurations</h3><ol>
+<li><p>use <code>vagrant ssh master</code> to enter master virtual machine.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant ssh master</span><br></pre></td></tr></table></figure>
+<center>
+ <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+     src="/img/image_2022-11-15-22-11-20.png"><br>
+ <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">vagrant ssh master</div>
+</center>
+</li>
+<li><p>Append public keys to authorized_keys by <code>cat /vagrant/cache/authorized_keys &gt;&gt; ~/.ssh/authorized_keys</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /vagrant/cache/authorized_keys &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Note that all three public keys have been generated and pasted in <code>/vagrant/cache/authorized_keys</code> by commands in <code>init.sh</code> and <code>Vagrantfile</code>.</p>
+</blockquote>
+</li>
+<li><p>Ssh configuration should be done in both slaves as well.</p>
+</li>
+<li><p>Varify ssh configuration by executing <code>ssh slave1</code> in <code>master</code> virtual machine. You sohuld log into slave1 without entering password.</p>
+<center>
+ <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+     src="/img/image_2022-11-15-22-22-03.png"><br>
+ <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">log into slave1 without password after ssh configuration</div>
+</center></li>
+</ol>
+<h2 id="Deploy-and-Varify-Hadoop"><a href="#Deploy-and-Varify-Hadoop" class="headerlink" title="Deploy and Varify Hadoop"></a>Deploy and Varify Hadoop</h2><h3 id="1-Deploy-Hadoop"><a href="#1-Deploy-Hadoop" class="headerlink" title="1. Deploy Hadoop"></a>1. Deploy Hadoop</h3><ul>
+<li><p>run <code>hadoop namenode -format</code> in <code>master</code> virtual machine to configure node information.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop namenode -format</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>run <code>start-all.sh</code> to start deployment. Always remember to run <code>stop-all.sh</code> before virtual machine shutdown.</p>
+</li>
+</ul>
+<h3 id="2-Varification"><a href="#2-Varification" class="headerlink" title="2. Varification"></a>2. Varification</h3><ul>
+<li>run <code>hadoop jar hadoop-mapreduce-examples-2.9.0.jar pi 5 5</code> in directory <code>/usr/local/hadoop/share/hadoop/mapreduce</code> to varify.<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop/share/hadoop/mapreduce</span><br><span class="line">hadoop jar hadoop-mapreduce-examples-2.9.0.jar pi 5 5</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>A number relatively close to pi is then presented. To be more accurate on the result, try running <code>pi 10 10000</code> which takes a longer period.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-User-Interface"><a href="#3-User-Interface" class="headerlink" title="3. User Interface"></a>3. User Interface</h3><ul>
+<li>Hadoop Environment Configuration on <code>IP:50070</code> where IP is the static IP for Master. And on <code>IP:8088</code> where IP is the static IP of Master and <code>8088</code> can be configured in those <code>.xml</code> files.</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+        src="/img/image_2022-11-15-22-33-19.png"><br><br>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+        src="/img/image_2022-11-15-22-33-51.png"><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">UI</div>
+</center>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/15/2022-11-15-deploy-hadoop/" data-id="cm2aewu58000gpcjvhhtwal7f" data-title="Deploy Hadoop with VirtualBox" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" rel="tag">課程作業</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          KinectV2 Camera Calibration and `Yolov5` Recognition
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Add Extra Memory to Thinkpad T14</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperReview/">PaperReview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Post/">Post</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KinectV2/" rel="tag">KinectV2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/" rel="tag">ML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenPose/" rel="tag">OpenPose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAF/" rel="tag">PAF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PaperReview/" rel="tag">PaperReview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance-Improve/" rel="tag">Performance Improve</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pose-Estimation/" rel="tag">Pose Estimation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemd/" rel="tag">Systemd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TJU/" rel="tag">TJU</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tranformer/" rel="tag">Tranformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViT/" rel="tag">ViT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playwright/" rel="tag">playwright</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" rel="tag">課程作業</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E6%95%99/" rel="tag">评教</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/Big-Data/" style="font-size: 10px;">Big Data</a> <a href="/tags/Clash/" style="font-size: 10px;">Clash</a> <a href="/tags/DIY/" style="font-size: 10px;">DIY</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/KinectV2/" style="font-size: 10px;">KinectV2</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/ML/" style="font-size: 10px;">ML</a> <a href="/tags/OpenPose/" style="font-size: 10px;">OpenPose</a> <a href="/tags/Opencv/" style="font-size: 10px;">Opencv</a> <a href="/tags/PAF/" style="font-size: 10px;">PAF</a> <a href="/tags/PaperReview/" style="font-size: 10px;">PaperReview</a> <a href="/tags/Performance-Improve/" style="font-size: 10px;">Performance Improve</a> <a href="/tags/Pose-Estimation/" style="font-size: 10px;">Pose Estimation</a> <a href="/tags/Systemd/" style="font-size: 10px;">Systemd</a> <a href="/tags/TJU/" style="font-size: 10px;">TJU</a> <a href="/tags/Tranformer/" style="font-size: 10px;">Tranformer</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/ViT/" style="font-size: 10px;">ViT</a> <a href="/tags/learn/" style="font-size: 15px;">learn</a> <a href="/tags/playwright/" style="font-size: 10px;">playwright</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 10px;">期末复习</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" style="font-size: 10px;">課程作業</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 15px;">记录</a> <a href="/tags/%E8%AF%84%E6%95%99/" style="font-size: 10px;">评教</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/">KinectV2 Camera Calibration and `Yolov5` Recognition</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-15-deploy-hadoop/">Deploy Hadoop with VirtualBox</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/">Add Extra Memory to Thinkpad T14</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/">Source Backup for Disk Update</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/2023-09-25-Github-Image-Bed/">Github Image Bed</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

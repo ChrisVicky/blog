@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T12:21:14.246Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/">KinectV2 Camera Calibration and `Yolov5` Recognition</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Project Repo: <a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/KinectV2-calibration-and-Yolov5-recognition">KinectV2 Camera Calibration and <code>Yolov5</code> Recognition</a></li>
+<li>2022-12-30 19:11</li>
+<li>This is a subproject from <a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/camera-position-solution">camera-position-solution</a>.</li>
+</ul>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>We are assigned the mission to combine KinectV2 Camera and a Robot car to construct a system that automatically calculate the camera’s position and can tell where some objects are only according to camera’s perspective (Of course here we use Yolov5 to recognize objects);</p>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-01-04-00-07-18.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">KinectV2</div>
+</center>
+
+<p>In this part, we use the chess board instead of the robot car to accomplish the calibration part and then calculate a perspective transformation matrix that maps points in the image (aka pixel coordinates) to the desk (or bed) coordinates.</p>
+        
+          <p class="article-more-link">
+            <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/" data-id="cm2aewu5a000vpcjvgxrmdnqb" data-title="KinectV2 Camera Calibration and `Yolov5` Recognition" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KinectV2/" rel="tag">KinectV2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-11-15-deploy-hadoop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/15/2022-11-15-deploy-hadoop/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T12:21:14.245Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/15/2022-11-15-deploy-hadoop/">Deploy Hadoop with VirtualBox</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>This post is a reminder of hadoop deployment on Arch Linux and virtualbox (with vagrant)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/hadoop-vm">Related Github Repo contains resource:</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2024/10/15/2022-11-15-deploy-hadoop/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/15/2022-11-15-deploy-hadoop/" data-id="cm2aewu58000gpcjvhhtwal7f" data-title="Deploy Hadoop with VirtualBox" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" rel="tag">課程作業</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-11-18-Add-Extra-Memory-to-Thinkpad-T14" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T12:21:14.245Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/">Add Extra Memory to Thinkpad T14</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Working on hard projects with Hadoop cluster really runs out the limit of my poorly configured laptop. Therefore, I decide to add an extra memory card to it to boost the performance.</p>
+        
+          <p class="article-more-link">
+            <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/" data-id="cm2aewu59000ipcjv87c26b5x" data-title="Add Extra Memory to Thinkpad T14" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Performance-Improve/" rel="tag">Performance Improve</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-12-12-Source-Backup-for-Disk-Update" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T12:21:14.245Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/">Source Backup for Disk Update</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><ul>
+<li>作为大学生，只有一台 Thinkpad T14 Gen 1 的笔记本却安装了 Arch Linux，而由于课程需要仍保留了大部分 Windows 11 的系统，长期以来的使用，让 512 GB 的存储空间告急，于是打算更换一块 1T 的固态硬盘。在此对磁盘更换做一个记录。</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/" data-id="cm2aewu5a000rpcjvckux8bov" data-title="Source Backup for Disk Update" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023-09-25-Github-Image-Bed" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/25/2023-09-25-Github-Image-Bed/" class="article-date">
+  <time class="dt-published" datetime="2023-09-25T12:22:00.000Z" itemprop="datePublished">2023-09-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/25/2023-09-25-Github-Image-Bed/">Github Image Bed</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><ul>
+<li>It is a catastrophe when trasfering markdown files from one desktop to another without encompassing all the images embeded. Therefore, an image bed is imperative and urgent to be setup. I’ve noticed some solutions on the internet using <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo</a>. Yet it is not delicate enough since it has to support various platforms. Thus, after discovering, I found Github Api is all you need to full-fill the requirement.</li>
+</ul>
+<h2 id="Intuitions"><a href="#Intuitions" class="headerlink" title="Intuitions"></a>Intuitions</h2><ul>
+<li>Image bed does one and the only thing, storing images and being accessed through internet. </li>
+<li>With Github’s Apis, it is extremely plain to automatically upload images.</li>
+</ul>
+<h2 id="Github-Repo-Setup"><a href="#Github-Repo-Setup" class="headerlink" title="Github Repo Setup"></a>Github Repo Setup</h2><ul>
+<li><p>A public-reacheable repo can be easily setup.</p>
+</li>
+<li><p>A Token has be to generated and granted with the following Scopes.</p>
+<ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-25-20-11-38.png" alt="image_2023-09-25-20-11-38"></li>
+</ul>
+</li>
+<li><p>The following information must be granted to continue</p>
+<ul>
+<li><code>owner</code>: Your Github Name</li>
+<li><code>repo</code>: Your Repo Name</li>
+<li><code>token</code>: Key to Authorization</li>
+</ul>
+</li>
+</ul>
+<h2 id="Program-and-automation"><a href="#Program-and-automation" class="headerlink" title="Program and automation"></a>Program and automation</h2><ul>
+<li>A <a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/image-bed-go">Program</a> written in Golang is then conducted with <a href="github.com/google/go-github/v55/github">Github Api Wrapper</a>, which basically does one thing: <em>Write an image, stored locally, to github and return its url.</em></li>
+<li>To embed the Process with my workflow – using vim, I slightly modify the <a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/img-paste.vim">img-paste plugin</a> to use the script.</li>
+<li>Illustration:<br><img src="/myimg/vim-image-bed-integration.gif" alt="vim-image-bed-integration"></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/25/2023-09-25-Github-Image-Bed/" data-id="cm2aewu5e0030pcjv6soz9vzd" data-title="Github Image Bed" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/" rel="tag">learn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023-09-25-School-List" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/25/2023-09-25-School-List/" class="article-date">
+  <time class="dt-published" datetime="2023-09-25T11:23:00.000Z" itemprop="datePublished">2023-09-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Note/">Note</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/25/2023-09-25-School-List/">School List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><ul>
+<li>Universities in Quebec will not be considered since French plays a vital part in immigration policies of the province.</li>
+</ul>
+<h1 id="Schools"><a href="#Schools" class="headerlink" title="Schools"></a>Schools</h1><h2 id="University-of-Toronto"><a href="#University-of-Toronto" class="headerlink" title="University of Toronto"></a>University of Toronto</h2><h3 id="Rankings"><a href="#Rankings" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#1 (Provincial)</li>
+<li>#21 (QS)</li>
+<li>#18 (US News)</li>
+</ul>
+<h3 id="Location"><a href="#Location" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Toronto, Ontari</li>
+</ul>
+<h3 id="Programs"><a href="#Programs" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.sgs.utoronto.ca/programs/">Programs</a></h3><ul>
+<li>General English Requirement<ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-20-51-39.png" alt="image_2023-09-23-20-51-39"></li>
+</ul>
+</li>
+<li>General Regulations: <a target="_blank" rel="noopener" href="https://sgs.calendar.utoronto.ca/general-regulations">https://sgs.calendar.utoronto.ca/general-regulations</a></li>
+<li>NOTE: (2023-09-23) No GRE specifications are found in the Programs of <code>UofT</code>. The word <code>GRE</code> does not even appear in the webpage.</li>
+</ul>
+<h4 id="MScAC-CS"><a href="#MScAC-CS" class="headerlink" title="MScAC - CS"></a><a target="_blank" rel="noopener" href="https://www.sgs.utoronto.ca/programs/applied-computing/">MScAC - CS</a></h4><ul>
+<li><strong>Length: 4 Sessions</strong></li>
+<li>DDL: Dec&#x2F;1&#x2F;2023</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-19-42-54.png" alt="image_2023-09-23-19-42-54"></li>
+</ul>
+<h5 id="General-Requirements"><a href="#General-Requirements" class="headerlink" title="General Requirements"></a>General Requirements</h5><ul>
+<li>English<ul>
+<li>TOEFL: 93&#x2F;120 and 22&#x2F;30 (W&#x2F;S)</li>
+<li>IELTS: 7.0 and 6.5</li>
+</ul>
+</li>
+<li>Three letters of support</li>
+</ul>
+<h5 id="No-Concentration"><a href="#No-Concentration" class="headerlink" title="No Concentration"></a><strong>No Concentration</strong></h5><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-19-48-23.png" alt="image_2023-09-23-19-48-23"></li>
+</ul>
+<h5 id="AI"><a href="#AI" class="headerlink" title="AI"></a><strong>AI</strong></h5><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-19-53-40.png" alt="image_2023-09-23-19-53-40"></li>
+<li>Three letters of reference from faculty and&#x2F;or employers, with preference for at least <em>one such letter from a faculty member in Artificial Intelligence (AI)</em>.</li>
+</ul>
+<h5 id="DS"><a href="#DS" class="headerlink" title="DS"></a><strong>DS</strong></h5><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-20-06-25.png" alt="image_2023-09-23-20-06-25"></li>
+</ul>
+<h5 id="DS-1"><a href="#DS-1" class="headerlink" title="$DS^$*"></a><em><em>$DS^</em>$</em>*</h5><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-20-09-52.png" alt="image_2023-09-23-20-09-52"></li>
+</ul>
+<h4 id="MSc-CS"><a href="#MSc-CS" class="headerlink" title="MSc - CS"></a><a target="_blank" rel="noopener" href="https://www.sgs.utoronto.ca/programs/computer-science/">MSc - CS</a></h4><ul>
+<li><strong>Length: 4 Sessions</strong></li>
+<li>DDL: Dec&#x2F;1&#x2F;2022 <code>2023-09-23: Not yet Opened</code></li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-20-26-31.png" alt="image_2023-09-23-20-26-31"></li>
+<li>Three letters of support</li>
+</ul>
+<h4 id="MASc-ECE"><a href="#MASc-ECE" class="headerlink" title="MASc - ECE"></a><a target="_blank" rel="noopener" href="https://www.sgs.utoronto.ca/programs/electrical-and-computer-engineering/">MASc - ECE</a></h4><ul>
+<li><strong>Length: 6 Sessions</strong></li>
+<li>DDL: Jan&#x2F;4&#x2F;2024</li>
+<li>Master of Applied Science</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-20-41-24.png" alt="image_2023-09-23-20-41-24"></li>
+</ul>
+<h4 id="MEng-ECE"><a href="#MEng-ECE" class="headerlink" title="MEng - ECE"></a><a target="_blank" rel="noopener" href="https://www.sgs.utoronto.ca/programs/electrical-and-computer-engineering/">MEng - ECE</a></h4><ul>
+<li><strong>Length</strong><ul>
+<li>3 Sessions</li>
+<li>6 Sessions (Extened)</li>
+</ul>
+</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-20-40-56.png" alt="image_2023-09-23-20-40-56"></li>
+</ul>
+<h4 id="MSc-Statics"><a href="#MSc-Statics" class="headerlink" title="MSc - Statics"></a><a target="_blank" rel="noopener" href="https://www.sgs.utoronto.ca/programs/statistics/">MSc - Statics</a></h4><ul>
+<li><strong>Length: 3 Sessions</strong></li>
+<li>Statistical Theory and Application,  Probability</li>
+<li>DDL: Jan&#x2F;22&#x2F;2023 <code>2023-09-23: Not yet Opened</code></li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-21-52-45.png" alt="image_2023-09-23-21-52-45"></li>
+</ul>
+<hr>
+<h2 id="University-of-British-Columbia"><a href="#University-of-British-Columbia" class="headerlink" title="University of British Columbia"></a>University of British Columbia</h2><h3 id="Rankings-1"><a href="#Rankings-1" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#1 (Provincial)</li>
+<li>#34 (QS)</li>
+<li>#35 (US)</li>
+</ul>
+<h3 id="Location-1"><a href="#Location-1" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Vancouver, British Columbia</li>
+</ul>
+<h3 id="Programs-1"><a href="#Programs-1" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs">Programs</a></h3><ul>
+<li>Overall English Requirements<ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-30-06.png" alt="image_2023-09-23-22-30-06"></li>
+</ul>
+</li>
+</ul>
+<h4 id="MSc-CS-1"><a href="#MSc-CS-1" class="headerlink" title="MSc - CS"></a><a target="_blank" rel="noopener" href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-science-computer-science">MSc - CS</a></h4><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Dec/15/2023</code></li>
+<li>Master of Science in Computer Science</li>
+</ul>
+<h5 id="English"><a href="#English" class="headerlink" title="English"></a>English</h5><ul>
+<li>100&#x2F;22&#x2F;21&#x2F;21&#x2F;22 - TOEFL&#x2F;R&#x2F;W&#x2F;S&#x2F;L</li>
+<li>7&#x2F;6.5 - IELTS</li>
+<li>GRE NOT required</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-38-05.png" alt="image_2023-09-23-22-38-05"></li>
+</ul>
+<h4 id="Master-of-Data-Sience"><a href="#Master-of-Data-Sience" class="headerlink" title="Master of Data Sience"></a><a target="_blank" rel="noopener" href="https://masterdatascience.ubc.ca/programs">Master of Data Sience</a></h4><ul>
+<li><strong>Length: 10 Months</strong></li>
+<li>DDL: <code>Nov/3/2023</code> <strong>to</strong> <code>Jan/31/2024</code></li>
+<li><a target="_blank" rel="noopener" href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-data-science-computational-linguistics">Linguistics</a></li>
+<li><a target="_blank" rel="noopener" href="https://masterdatascience.ubc.ca/programs/vancouver">Vancouver</a></li>
+<li><a target="_blank" rel="noopener" href="https://masterdatascience.ubc.ca/programs/okanagan">Okanagan</a></li>
+<li>NOTE: (2023-09-23) Detailed Requirements are Not Yet Revealed</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-59-28.png" alt="image_2023-09-23-22-59-28"></li>
+</ul>
+<h4 id="MEng-ECE-1"><a href="#MEng-ECE-1" class="headerlink" title="MEng - ECE"></a><a target="_blank" rel="noopener" href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-engineering-electrical-computer-engineering">MEng - ECE</a></h4><ul>
+<li><strong>Length: 12 ~ 16 Months:</strong><ul>
+<li><em>The MEng program typically takes 12-16 months to complete, but students have up to 5 years to complete the program if they choose.</em></li>
+</ul>
+</li>
+<li>DDL: <code>Oct/15/2023</code> <strong>to</strong> <code>Jan/15/2024</code></li>
+<li>Master of Engineering in Electrical and Computer Engineering</li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://ece.ubc.ca/graduate/programs/master-engineering/">https://ece.ubc.ca/graduate/programs/master-engineering/</a></li>
+<li>The GRE is not required <strong>But Welcomed</strong>.</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-24-26.png" alt="image_2023-09-23-22-24-26"> </li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-25-10.png" alt="image_2023-09-23-22-25-10"> </li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-17-46.png" alt="image_2023-09-23-22-17-46"></li>
+</ul>
+<h4 id="MASc-ECE-1"><a href="#MASc-ECE-1" class="headerlink" title="MASc - ECE"></a><a target="_blank" rel="noopener" href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-applied-science-electrical-computer-engineering">MASc - ECE</a></h4><ul>
+<li><strong>Length: 2 Years</strong></li>
+<li>DDL: <code>Oct/15/2023</code> <strong>to</strong> <code>Jan/31/2024</code></li>
+<li>More academic than MEng</li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://ece.ubc.ca/graduate/programs/master-applied-science/">https://ece.ubc.ca/graduate/programs/master-applied-science/</a></li>
+<li>Master of Applied Science in Electrical and Computer Engineering </li>
+<li>The GRE is not required <strong>But Welcomed</strong>.</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-33-02.png" alt="image_2023-09-23-22-33-02"></li>
+</ul>
+<h4 id="MSc-Statistics"><a href="#MSc-Statistics" class="headerlink" title="MSc - Statistics"></a><a target="_blank" rel="noopener" href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-science-statistics">MSc - Statistics</a></h4><ul>
+<li><strong>Length: 1.96 Year</strong>:<ul>
+<li><em>Based on 41 graduations between 2017 - 2020 the minimum time to completion is 1.66 years and the maximum time is 2.99 years with an average of 1.96 years of study. All calculations exclude leave times.</em></li>
+</ul>
+</li>
+<li>DDL: <code>Oct/2/2023</code> to <code>Jan/7/2024</code></li>
+<li>Master of Science in Statistics</li>
+<li>The GRE is not required.</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-55-52.png" alt="image_2023-09-23-22-55-52"> </li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-23-22-57-16.png" alt="image_2023-09-23-22-57-16"></li>
+</ul>
+<hr>
+<h2 id="McGill-University"><a href="#McGill-University" class="headerlink" title="McGill University"></a>McGill University</h2><h3 id="Rankings-2"><a href="#Rankings-2" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#1(Provincial)</li>
+<li>#30(QS)</li>
+<li>#54(US)</li>
+</ul>
+<h3 id="Location-2"><a href="#Location-2" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Montreal, Quebec</li>
+</ul>
+<h3 id="Programs-2"><a href="#Programs-2" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/programs">Programs</a></h3><ul>
+<li>Issues with Supervisors are NOT mentioned in program description.</li>
+<li>English Requirements<ul>
+<li>86&#x2F;20 - TOEFL</li>
+<li>6.5 for all - IELTS</li>
+</ul>
+</li>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Dec/15/2023</code></li>
+</ul>
+<h4 id="M-Sc-CS-Thesis"><a href="#M-Sc-CS-Thesis" class="headerlink" title="M.Sc. - CS | Thesis"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/program/computer-science-msc">M.Sc. - CS | Thesis</a></h4><ul>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Dec/15/2023</code></li>
+<li><strong>Length: ~2Y</strong><ul>
+<li><em>The program is designed to take 18-24 months. Students have to register as full-term M.Sc. students (thesis) for three terms (typically in Fall&#x2F;Winter&#x2F;Fall) and then often for one additional session (Winter).</em></li>
+</ul>
+</li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://www.cs.mcgill.ca/graduate/masters/mscthesis/">https://www.cs.mcgill.ca/graduate/masters/mscthesis/</a></li>
+</ul>
+<h4 id="M-Sc-CS-NON-Thesis"><a href="#M-Sc-CS-NON-Thesis" class="headerlink" title="M.Sc. - CS | NON-Thesis"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/program/computer-science-msc">M.Sc. - CS | NON-Thesis</a></h4><ul>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Dec/15/2023</code></li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://www.cs.mcgill.ca/graduate/masters/mscnonthesis/">https://www.cs.mcgill.ca/graduate/masters/mscnonthesis/</a></li>
+<li>Additional credits can be ful-filled by course-work, internship or research.</li>
+</ul>
+<h4 id="M-Sc-ECE-Thesis"><a href="#M-Sc-ECE-Thesis" class="headerlink" title="M.Sc. - ECE | Thesis"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/program/electrical-engineering-msc">M.Sc. - ECE | Thesis</a></h4><ul>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Dec/15/2023</code></li>
+<li><strong>Length: ~2Y</strong><ul>
+<li><em>Full-time students must complete the degree within three (3) years of initial registration. However, it is possible to complete the program in one and one-half years.</em></li>
+</ul>
+</li>
+<li>software engineering, intelligent systems</li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://www.mcgill.ca/ece/graduate/programinfo/mastereng">https://www.mcgill.ca/ece/graduate/programinfo/mastereng</a></li>
+</ul>
+<h4 id="M-Eng-ECE-Non-Thesis"><a href="#M-Eng-ECE-Non-Thesis" class="headerlink" title="M.Eng. - ECE | Non-Thesis"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/program/electrical-engineering-meng-non-thesis">M.Eng. - ECE | Non-Thesis</a></h4><ul>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Dec/15/2023</code></li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://www.mcgill.ca/ece/graduate/programinfo/master-engineering-non-thesis-project-based-option-retired">https://www.mcgill.ca/ece/graduate/programinfo/master-engineering-non-thesis-project-based-option-retired</a></li>
+<li>software engineering, intelligent systems</li>
+</ul>
+<h4 id="M-A-Math-Statistics"><a href="#M-A-Math-Statistics" class="headerlink" title="M.A. - Math &amp; Statistics"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/program/mathematics-statistics-ma">M.A. - Math &amp; Statistics</a></h4><ul>
+<li><strong>Length: <em>NOT FOUND</em></strong></li>
+<li>DDL: <code>Sep/15/2023</code> <strong>to</strong> <code>Jan/15/2023</code></li>
+<li>Official Site: <a target="_blank" rel="noopener" href="https://www.mcgill.ca/mathstat/graduate/prospective-students/admissions">https://www.mcgill.ca/mathstat/graduate/prospective-students/admissions</a></li>
+<li>Statistics</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-18-27-04.png" alt="image_2023-09-24-18-27-04"></li>
+</ul>
+<h4 id="M-M-A-Analystics"><a href="#M-M-A-Analystics" class="headerlink" title="M.M.A. - Analystics"></a><a target="_blank" rel="noopener" href="https://www.mcgill.ca/gradapplicants/program/analytics-mma">M.M.A. - Analystics</a></h4><ul>
+<li><strong>Length: 1Y</strong></li>
+</ul>
+<hr>
+<h2 id="University-of-Alberta"><a href="#University-of-Alberta" class="headerlink" title="University of Alberta"></a>University of Alberta</h2><h3 id="Rankings-3"><a href="#Rankings-3" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#1 (Provincial)</li>
+<li>#111 (QS)</li>
+<li>#136 (US)</li>
+</ul>
+<h3 id="Location-3"><a href="#Location-3" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Edmonton, Alberta</li>
+</ul>
+<h3 id="Programs-3"><a href="#Programs-3" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.ualberta.ca/graduate-programs/index.html">Programs</a></h3><ul>
+<li>If you are applying for a thesis-based program, please note that some programs require you to identify a potential supervisor before applying.</li>
+</ul>
+<h4 id="ECE"><a href="#ECE" class="headerlink" title="ECE"></a><a target="_blank" rel="noopener" href="https://www.ualberta.ca/graduate-programs/electrical-and-computer-engineering.html">ECE</a></h4><ul>
+<li>DDL: <code>May/1/2024</code></li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-18-45-49.png" alt="image_2023-09-24-18-45-49"></li>
+<li>a Curriculum Vitae </li>
+<li>Three letters of reference</li>
+</ul>
+<h5 id="Master-of-Engineering"><a href="#Master-of-Engineering" class="headerlink" title="Master of Engineering"></a><a target="_blank" rel="noopener" href="https://calendar.ualberta.ca/preview_program.php?catoid=39&poid=47656">Master of Engineering</a></h5><ul>
+<li><strong>Length:</strong><ul>
+<li>Typically: <strong>one and a half years to two years</strong>. </li>
+<li>Max: <em>six years</em>.</li>
+</ul>
+</li>
+<li>course-based</li>
+</ul>
+<h5 id="Master-of-Science"><a href="#Master-of-Science" class="headerlink" title="Master of Science"></a><a target="_blank" rel="noopener" href="https://calendar.ualberta.ca/preview_program.php?catoid=39&poid=47653">Master of Science</a></h5><ul>
+<li><strong>Length:</strong><ul>
+<li>Typical time of two years is normally required. </li>
+<li>Max: four years.</li>
+</ul>
+</li>
+<li>thesis-based</li>
+</ul>
+<h4 id="CS"><a href="#CS" class="headerlink" title="CS"></a><a target="_blank" rel="noopener" href="https://www.ualberta.ca/graduate-programs/computing-science.html">CS</a></h4><ul>
+<li>DDL: <code>Dec/15/2023</code></li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-19-12-11.png" alt="image_2023-09-24-19-12-11"> </li>
+<li>Three letters of reference and a CV.</li>
+<li>Applicants to a thesis-based MSc are required to select a research area and name up to three professors as potential supervisors.</li>
+</ul>
+<h5 id="Master-of-Science-1"><a href="#Master-of-Science-1" class="headerlink" title="Master of Science"></a><a target="_blank" rel="noopener" href="https://calendar.ualberta.ca/preview_program.php?catoid=39&poid=47585">Master of Science</a></h5><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>Thesis &amp; Course - Based Versions</li>
+</ul>
+<h5 id="Master-of-Science-…-in-Statistical-Machine-Learning"><a href="#Master-of-Science-…-in-Statistical-Machine-Learning" class="headerlink" title="Master of Science … in Statistical Machine Learning"></a><a target="_blank" rel="noopener" href="https://calendar.ualberta.ca/preview_program.php?catoid=39&poid=48148">Master of Science … in Statistical Machine Learning</a></h5><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>There is no direct admission to the MSc with a specialization in Statistical Machine Learning. Applicants wishing to pursue this program should apply to the thesis-based MSc; they may apply to transfer to the SML program after one or two terms of study provided a supervisor is found.</li>
+</ul>
+<h4 id="Math-Statistical-Science"><a href="#Math-Statistical-Science" class="headerlink" title="Math &amp; Statistical Science"></a><a target="_blank" rel="noopener" href="https://www.ualberta.ca/graduate-programs/mathematical-and-statistical-sciences.html">Math &amp; Statistical Science</a></h4><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-19-25-39.png" alt="image_2023-09-24-19-25-39"></li>
+<li>DDL: NOT FOUND</li>
+<li>Applicants are <strong>encouraged</strong> to contact academic staff before applying and identify professors who would be willing to provide supervision.</li>
+<li>Requirements<ul>
+<li>A Curriculum Vitae</li>
+<li>A brief (two pages maximum) Personal Statement</li>
+<li>Three letters of reference</li>
+<li>Publications (up to a maximum of three) (not required)</li>
+<li>GRE scores (General and Mathematics) (not required)</li>
+</ul>
+</li>
+</ul>
+<h5 id="Master-of-Science-with-a-specialization-in-Statistical-Machine-Learning"><a href="#Master-of-Science-with-a-specialization-in-Statistical-Machine-Learning" class="headerlink" title="Master of Science with a specialization in Statistical Machine Learning"></a><a target="_blank" rel="noopener" href="https://calendar.ualberta.ca/preview_program.php?catoid=39&poid=48232">Master of Science with a specialization in Statistical Machine Learning</a></h5><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>Thesis-Based</li>
+</ul>
+<h5 id="Master-of-Science-with-a-specialization-in-Statistics"><a href="#Master-of-Science-with-a-specialization-in-Statistics" class="headerlink" title="Master of Science with a specialization in Statistics"></a><a target="_blank" rel="noopener" href="https://calendar.ualberta.ca/preview_program.php?catoid=39&poid=48233">Master of Science with a specialization in Statistics</a></h5><ul>
+<li><strong>Length: 2Y for Thesis-based | 1Y for Course-based</strong></li>
+</ul>
+<hr>
+<h2 id="University-of-Waterloo"><a href="#University-of-Waterloo" class="headerlink" title="University of Waterloo"></a>University of Waterloo</h2><h3 id="Rankings-4"><a href="#Rankings-4" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#2 (Provincial)</li>
+<li>#112 (QS)</li>
+<li>#191 (US)</li>
+</ul>
+<h3 id="Location-4"><a href="#Location-4" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Waterloo, Ontari</li>
+</ul>
+<h3 id="Programs-4"><a href="#Programs-4" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/grad-programs/results">Programs</a></h3><h4 id="MMath-CS"><a href="#MMath-CS" class="headerlink" title="MMath - CS"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/programs/computer-science-mmath-waterloo">MMath - CS</a></h4><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>DDL: <code>Dec/1/2023</code></li>
+<li>Thesis</li>
+<li>Supervisors: Finding (Not necessarily required)</li>
+<li>TOEFL 93 (writing 22, speaking 22), IELTS 6.5 (writing 6.0, speaking 6.5)</li>
+<li>3 Reference</li>
+</ul>
+<h4 id="MASc-ECE-2"><a href="#MASc-ECE-2" class="headerlink" title="MASc - ECE"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/programs/electrical-and-computer-engineering-masc-waterloo">MASc - ECE</a></h4><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>DDL: <code>Feb/1/2024</code></li>
+<li>A supervisor is required to receive an offer of admission</li>
+<li>Thesis</li>
+<li>TOEFL 80 (writing 22, speaking 20, reading 20, listening 18), IELTS 6.5 (writing 6.0, speaking 6.0)</li>
+<li>2 Reference</li>
+</ul>
+<h4 id="MEng-Co-op-ECE"><a href="#MEng-Co-op-ECE" class="headerlink" title="MEng (Co-op) - ECE"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/programs/electrical-and-computer-engineering-meng-co-op-waterloo">MEng (Co-op) - ECE</a></h4><ul>
+<li><strong>Length: 20 Months</strong></li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-19-46-50.png" alt="image_2023-09-24-19-46-50"> </li>
+<li>course-work + co-operative</li>
+<li>DDL: <code>Feb/1/2024</code></li>
+<li>TOEFL 80 (writing 22, speaking 20, reading 20, listening 18), IELTS 6.5 (writing 6.0, speaking 6.0)</li>
+</ul>
+<h4 id="MMath-Data-Science"><a href="#MMath-Data-Science" class="headerlink" title="MMath - Data Science"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/programs/data-science-mmath-waterloo">MMath - Data Science</a></h4><ul>
+<li>Thesis-Based</li>
+<li>DDL: <code>Dec/15/2023</code></li>
+<li><strong>Length: 2Y</strong></li>
+<li>Supervisors: Finding (Not necessarily required)</li>
+<li>TOEFL 90 (writing 25, speaking 25), IELTS 7.0 (writing 6.5, speaking 6.5)</li>
+<li>3 references</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-19-50-07.png" alt="image_2023-09-24-19-50-07"></li>
+</ul>
+<h4 id="MDSAI-Co-op-DS-AI-Co-op"><a href="#MDSAI-Co-op-DS-AI-Co-op" class="headerlink" title="MDSAI (Co-op) - DS + AI + Co-op"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/programs/data-science-and-artificial-intelligence-mdsai-co-op">MDSAI (Co-op) - DS + AI + Co-op</a></h4><ul>
+<li><strong>Length: 16 Months</strong></li>
+<li>Course work</li>
+<li>??? TOEFL 100 (writing 26, speaking 26), IELTS 7.5 (writing 7.0, speaking 7.0)</li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-20-01-01.png" alt="image_2023-09-24-20-01-01"></li>
+</ul>
+<h4 id="MMath-Statics"><a href="#MMath-Statics" class="headerlink" title="MMath - Statics"></a><a target="_blank" rel="noopener" href="https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/programs/statistics-mmath-waterloo">MMath - Statics</a></h4><ul>
+<li>DDL: <code>Jan/15/2024</code></li>
+<li><strong>Length: 24 Months</strong></li>
+<li>Supervisors: Required (But Not necessarily required prior to the application)</li>
+<li>Thesis</li>
+<li>TOEFL 90 (writing 25, speaking 25), IELTS 7.0 (writing 6.5, speaking 6.5)</li>
+</ul>
+<hr>
+<h2 id="Western-University"><a href="#Western-University" class="headerlink" title="Western University"></a>Western University</h2><h3 id="Rankings-5"><a href="#Rankings-5" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#3 (Provincial)</li>
+<li>#114 (QS)</li>
+<li>#300 (US)</li>
+</ul>
+<h3 id="Location-5"><a href="#Location-5" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>London, Ontari</li>
+</ul>
+<h3 id="Programs-5"><a href="#Programs-5" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://grad.uwo.ca/admissions/programs/index.cfm">Programs</a></h3><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-20-42-26.png" alt="image_2023-09-24-20-42-26"></li>
+</ul>
+<h4 id="MSc-CS-2"><a href="#MSc-CS-2" class="headerlink" title="MSc - CS"></a><a target="_blank" rel="noopener" href="https://grad.uwo.ca/admissions/programs/program.cfm?p=37">MSc - CS</a></h4><ul>
+<li><strong>Length: 4 Terms</strong></li>
+<li>Course-based, project-based or thesis-based</li>
+<li>TOEFL: 92&#x2F;20, IELTS: 6.5&#x2F;6</li>
+<li>DDL: <code>Feb/15/2024</code> (Mid-April Shall receive the Acceptance Notification)</li>
+</ul>
+<h4 id="MESc-ECE"><a href="#MESc-ECE" class="headerlink" title="MESc - ECE"></a><a target="_blank" rel="noopener" href="https://grad.uwo.ca/admissions/programs/program.cfm?p=39">MESc - ECE</a></h4><ul>
+<li><strong>Length: 6 Terms</strong></li>
+<li>Thesis-based</li>
+<li>TOEFL: 86&#x2F;20, IELTS: 6.5&#x2F;6</li>
+<li>DDL: <code>Jul/31/2024</code></li>
+</ul>
+<h4 id="MSc-Statistics-1"><a href="#MSc-Statistics-1" class="headerlink" title="MSc - Statistics"></a><a target="_blank" rel="noopener" href="https://grad.uwo.ca/admissions/programs/program.cfm?p=140">MSc - Statistics</a></h4><ul>
+<li>**Length: **<ul>
+<li>3 Terms (project-based)</li>
+<li>6 Terms (Thesis-based)</li>
+</ul>
+</li>
+<li>TOEFL: 86&#x2F;20; IELTS: 6.5&#x2F;6</li>
+<li>DDL: <code>Feb/15/2024</code></li>
+</ul>
+<h4 id="MDA-Data-Science"><a href="#MDA-Data-Science" class="headerlink" title="MDA - Data Science"></a><a target="_blank" rel="noopener" href="https://grad.uwo.ca/admissions/programs/program.cfm?p=272">MDA - Data Science</a></h4><ul>
+<li><strong>Length: 3 Terms</strong></li>
+<li>IELTS: 7.0&#x2F;6.5</li>
+<li>Course-based</li>
+</ul>
+<hr>
+<h2 id="Universite-de-Montreal"><a href="#Universite-de-Montreal" class="headerlink" title="Université de Montréal"></a>Université de Montréal</h2><h3 id="Rankings-6"><a href="#Rankings-6" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#2 (Provincial)</li>
+<li>#141 (QS)</li>
+<li>#156 (US)</li>
+</ul>
+<h3 id="Location-6"><a href="#Location-6" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Montreal, Quebec</li>
+</ul>
+<h3 id="Programs-6"><a href="#Programs-6" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://admission.umontreal.ca/en/programs-of-study">Programs</a></h3><ul>
+<li>Most Programs are <em>French Only</em></li>
+</ul>
+<hr>
+<h2 id="University-of-Calgary"><a href="#University-of-Calgary" class="headerlink" title="University of Calgary"></a>University of Calgary</h2><h3 id="Rankings-7"><a href="#Rankings-7" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#2 (Provincial)</li>
+<li>#182 (QS)</li>
+<li>#175 (US)</li>
+</ul>
+<h3 id="Location-7"><a href="#Location-7" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Calgary, Alberta</li>
+</ul>
+<h3 id="Programs-7"><a href="#Programs-7" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs">Programs</a></h3><ul>
+<li>Supervisors: For Thesis-based only. <ul>
+<li><em>A supervisor is required, but is not required prior to the start of the program</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="MEng-ECE-2"><a href="#MEng-ECE-2" class="headerlink" title="MEng - ECE"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/electrical-and-computer-engineering-meng-course">MEng - ECE</a></h4><ul>
+<li><strong>Length: 2Y</strong><ul>
+<li><em>The program can often be completed in one to two years of full-time study</em></li>
+</ul>
+</li>
+<li>course-based</li>
+<li>TOEFL: 86&#x2F;20; IELTS: 6.5&#x2F;6.0</li>
+<li>DDL: <code>Mar/1/2024</code><ul>
+<li><em>We encourage you to apply early as this program receives a high volume of applications and reaches capacity quickly. We send offers to qualified applicants on a rolling basis.</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="MEng-ECE-Thesis"><a href="#MEng-ECE-Thesis" class="headerlink" title="MEng - ECE - Thesis"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/electrical-and-computer-engineering-meng-thesis">MEng - ECE - Thesis</a></h4><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>Thesis-based</li>
+<li>TOEFL: 86&#x2F;20; IELTS: 6.5&#x2F;6.0</li>
+<li>DDL: 2023-09-25: <code>NOT Accepting Applications</code></li>
+</ul>
+<h4 id="MSc-ECE"><a href="#MSc-ECE" class="headerlink" title="MSc - ECE"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/electrical-and-computer-engineering-msc-thesis">MSc - ECE</a></h4><ul>
+<li><strong>Length: 20Months</strong></li>
+<li>Thesis-based</li>
+<li>TOEFL: 86&#x2F;20; IELTS: 6.5&#x2F;6</li>
+<li>DDL: <code>Jan/31/2024</code></li>
+</ul>
+<h4 id="MSc-CS-3"><a href="#MSc-CS-3" class="headerlink" title="MSc - CS"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/computer-science-msc-thesis">MSc - CS</a></h4><ul>
+<li><strong>Length: 2Y</strong></li>
+<li>Thesis-based</li>
+<li>GRE: Expected<ul>
+<li><em>Special consideration will be given to those with GRE scores of at least 600 verbal, 750 quantitative, and 720 analytical (5.5 in the new format). Applicants from outside Canada are expected to apply with GRE scores.</em></li>
+</ul>
+</li>
+<li>TOEFL: 97; IELTS: 7.0&#x2F;6.5</li>
+<li>DDL: <code>Jan/15/2024</code> (<code>Estimated</code>)</li>
+</ul>
+<h4 id="MDSA-DS-Analystics"><a href="#MDSA-DS-Analystics" class="headerlink" title="MDSA - DS + Analystics"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/data-science-and-analytics-mdsa-course">MDSA - DS + Analystics</a></h4><ul>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-25-11-02-24.png" alt="image_2023-09-25-11-02-24"></li>
+<li>course-based</li>
+<li>Length: 1Y</li>
+<li>IELTS: 6.5&#x2F;6.0</li>
+<li>DDL: <ul>
+<li>For admission September 1:<ul>
+<li>Canadian and Permanent Residents: July 3</li>
+</ul>
+</li>
+<li>For admission January 1:<ul>
+<li>Canadian and Permanent Residents: October 3</li>
+<li>International: September 1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="MSc-Statistics-2"><a href="#MSc-Statistics-2" class="headerlink" title="MSc - Statistics"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/math-and-statistics-msc-thesis">MSc - Statistics</a></h4><ul>
+<li>Thesis-based</li>
+<li>Length: 2Year</li>
+<li>IELTS: 7.0&#x2F;6.5</li>
+<li>DDL: <code>Jan/15/2024</code></li>
+<li>3 References</li>
+</ul>
+<h4 id="MSc-Statistics-3"><a href="#MSc-Statistics-3" class="headerlink" title="MSc - Statistics"></a><a target="_blank" rel="noopener" href="https://grad.ucalgary.ca/future-students/explore-programs/math-and-statistics-msc-course">MSc - Statistics</a></h4><ul>
+<li>course-based</li>
+<li>Length: 1~2 Year</li>
+<li>IELTS: 7.0&#x2F;6.5</li>
+<li>DDL: <code>Jan/15/2024</code></li>
+<li>3 References</li>
+</ul>
+<hr>
+<h2 id="McMaster-University"><a href="#McMaster-University" class="headerlink" title="McMaster University"></a>McMaster University</h2><h3 id="Rankings-8"><a href="#Rankings-8" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#4 (Provincial)</li>
+<li>#189(QS)</li>
+<li>#138 (US)</li>
+</ul>
+<h3 id="Location-8"><a href="#Location-8" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Hamilton, Ontari</li>
+</ul>
+<h3 id="Programs-8"><a href="#Programs-8" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://gs.mcmaster.ca/programs/">Programs</a></h3><p>…</p>
+<hr>
+<h2 id="University-of-Ottawa"><a href="#University-of-Ottawa" class="headerlink" title="University of Ottawa"></a>University of Ottawa</h2><h3 id="Rankings-9"><a href="#Rankings-9" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#5 (Provincial)</li>
+<li>#203 (QS)</li>
+<li>#215 (US)</li>
+</ul>
+<h3 id="Location-9"><a href="#Location-9" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Ottawa, Ontari</li>
+</ul>
+<h3 id="Programs-9"><a href="#Programs-9" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://catalogue.uottawa.ca/en/programs/">Programs</a></h3><p>…</p>
+<hr>
+<h2 id="Queen’s-University-at-Kingston"><a href="#Queen’s-University-at-Kingston" class="headerlink" title="Queen’s University at Kingston"></a>Queen’s University at Kingston</h2><h3 id="Rankings-10"><a href="#Rankings-10" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#6 (Provincial)</li>
+<li>#209 (QS)</li>
+<li>#429 (US)</li>
+</ul>
+<h3 id="Location-10"><a href="#Location-10" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Kingston, Ontari</li>
+</ul>
+<h3 id="Programs-10"><a href="#Programs-10" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.queensu.ca/grad-postdoc/grad-studies/programs-degrees">Programs</a></h3><hr>
+<h2 id="Dalhousie-University"><a href="#Dalhousie-University" class="headerlink" title="Dalhousie University"></a>Dalhousie University</h2><h3 id="Rankings-11"><a href="#Rankings-11" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#1 (Provincial)</li>
+<li>#298 (QS)</li>
+<li>#314 (US)</li>
+</ul>
+<h3 id="Location-11"><a href="#Location-11" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Halifax, Nova Scotia</li>
+</ul>
+<h3 id="Programs-11"><a href="#Programs-11" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.dal.ca/academics/graduate_programs.html">Programs</a></h3><hr>
+<h2 id="Simon-Fraser-University"><a href="#Simon-Fraser-University" class="headerlink" title="Simon Fraser University"></a>Simon Fraser University</h2><h3 id="Rankings-12"><a href="#Rankings-12" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#2 (Provincial)</li>
+<li>#318 (QS)</li>
+<li>#317 (US)</li>
+</ul>
+<h3 id="Location-12"><a href="#Location-12" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Burnaby, British Columbia</li>
+</ul>
+<h3 id="Programs-12"><a href="#Programs-12" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.sfu.ca/gradstudies/apply/programs/alphabetic.html">Programs</a></h3><hr>
+<h2 id="University-of-Victoria"><a href="#University-of-Victoria" class="headerlink" title="University of Victoria"></a>University of Victoria</h2><h3 id="Rankings-13"><a href="#Rankings-13" class="headerlink" title="Rankings"></a>Rankings</h3><ul>
+<li>#3 (Provincial)</li>
+<li>#322 (QS)</li>
+<li>#324 (US)</li>
+</ul>
+<h3 id="Location-13"><a href="#Location-13" class="headerlink" title="Location"></a>Location</h3><ul>
+<li>Victoria, British Columbia</li>
+</ul>
+<h3 id="Programs-13"><a href="#Programs-13" class="headerlink" title="Programs"></a><a target="_blank" rel="noopener" href="https://www.uvic.ca/graduate/programs/graduate-programs/index.php">Programs</a></h3><hr>
+<h2 id="National-University-of-Singapore"><a href="#National-University-of-Singapore" class="headerlink" title="National University of Singapore"></a>National University of Singapore</h2><h2 id="Nanyang-Technological-University-Singapore"><a href="#Nanyang-Technological-University-Singapore" class="headerlink" title="Nanyang Technological University, Singapore"></a>Nanyang Technological University, Singapore</h2><hr>
+<h2 id="The-University-of-Hong-Kong"><a href="#The-University-of-Hong-Kong" class="headerlink" title="?The University of Hong Kong"></a>?The University of Hong Kong</h2><h2 id="The-Chinese-University-of-Hong-Kong"><a href="#The-Chinese-University-of-Hong-Kong" class="headerlink" title="?The Chinese University of Hong Kong"></a>?The Chinese University of Hong Kong</h2><h2 id="The-Hong-Kong-University-of-Science-and-Technology"><a href="#The-Hong-Kong-University-of-Science-and-Technology" class="headerlink" title="?The Hong Kong University of Science and Technology"></a>?The Hong Kong University of Science and Technology</h2><hr>
+<h1 id="Immigration-Policies"><a href="#Immigration-Policies" class="headerlink" title="Immigration Policies"></a>Immigration Policies</h1><h2 id="Canada"><a href="#Canada" class="headerlink" title="Canada"></a>Canada</h2><ul>
+<li>Federal Government - EE</li>
+<li>Provincial Nomination</li>
+</ul>
+<h3 id="British-Columbia"><a href="#British-Columbia" class="headerlink" title="British Columbia"></a>British Columbia</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.welcomebc.ca/Study-in-B-C/Stay-in-B-C-After-Studying">https://www.welcomebc.ca/Study-in-B-C/Stay-in-B-C-After-Studying</a></li>
+</ul>
+<h3 id="Ontari"><a href="#Ontari" class="headerlink" title="Ontari"></a>Ontari</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.ontario.ca/page/ontario-immigrant-nominee-program-oinp">https://www.ontario.ca/page/ontario-immigrant-nominee-program-oinp</a></li>
+</ul>
+<h3 id="Quebec"><a href="#Quebec" class="headerlink" title="Quebec"></a>Quebec</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.quebec.ca/en/education/study-quebec/staying-after-studies">https://www.quebec.ca/en/education/study-quebec/staying-after-studies</a></li>
+</ul>
+<h3 id="Nova-Scotia"><a href="#Nova-Scotia" class="headerlink" title="Nova Scotia"></a>Nova Scotia</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://novascotiaimmigration.com/study-here/after-you-graduate/">https://novascotiaimmigration.com/study-here/after-you-graduate/</a></li>
+</ul>
+<h3 id="Alberta"><a href="#Alberta" class="headerlink" title="Alberta"></a>Alberta</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://study.alberta.ca/after-graduation/immigrate-to-canada/">https://study.alberta.ca/after-graduation/immigrate-to-canada/</a></li>
+<li><img src="https://raw.githubusercontent.com/ChrisVicky/image-bed/main/2023-09/image_2023-09-24-21-54-55.png" alt="image_2023-09-24-21-54-55"></li>
+</ul>
+<h2 id="Singapore"><a href="#Singapore" class="headerlink" title="Singapore"></a>Singapore</h2><ul>
+<li>…</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/25/2023-09-25-School-List/" data-id="cm2aewu5e0035pcjvf2v437ph" data-title="School List" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023-06-11-数据结构期末复习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/11/2023-06-11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2023-06-11T11:03:40.000Z" itemprop="datePublished">2023-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Note/">Note</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/11/2023-06-11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">数据结构期末复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <center>
+    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" width="100%"
+        src="/img/image_2023-06-11-19-44-33.png">
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">MindMap</div>
+</center>
+
+<h1 id="2023-年复习版"><a href="#2023-年复习版" class="headerlink" title="2023 年复习版"></a>2023 年复习版</h1><ul>
+<li><input disabled="" type="checkbox"> 2023-06-16 考试复习版</li>
+</ul>
+<h2 id="复习重点"><a href="#复习重点" class="headerlink" title="复习重点"></a>复习重点</h2><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a><a href="/notes/%E7%BB%AA%E8%AE%BA">绪论</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD">基本概念和术语</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%AE%A1%E7%AE%97">时间复杂度计算</a></li>
+</ul>
+<h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a><a href="/notes/%E7%BA%BF%E6%80%A7%E8%A1%A8">线性表</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="#%E7%BA%BF%E6%80%A7%E8%A1%A8">线性表</a>、<a href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8">顺序表</a>、<a href="#%E5%8D%95%E9%93%BE%E8%A1%A8">单链表</a>的基本操作和算法</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="#%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8">循环链表</a>、<a href="#%E5%8F%8C%E5%90%91%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%E6%93%8D%E4%BD%9C">双向循环链表操作</a></li>
+</ul>
+<h3 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a><a href="/notes/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97">栈和队列</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 栈的定义、特点、基本操作和算法</li>
+<li><input checked="" disabled="" type="checkbox"> 队列的定义、特点、基本操作和算法</li>
+<li><input checked="" disabled="" type="checkbox"> 递归</li>
+</ul>
+<h3 id="数组和广义表"><a href="#数组和广义表" class="headerlink" title="数组和广义表"></a><a href="/notes/%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8">数组和广义表</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 上三角矩阵、下三角矩阵、稀疏矩阵存储与表示</li>
+<li><input checked="" disabled="" type="checkbox"> 稀疏存储与表示（矩阵快速转置）</li>
+</ul>
+<h3 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a><a href="/notes/%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91">树和二叉树</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 二叉树定义、性质</li>
+<li><input checked="" disabled="" type="checkbox"> 二叉树构造</li>
+<li><input checked="" disabled="" type="checkbox"> 二叉树遍历和算法（递归&#x2F;非递归）</li>
+<li><input checked="" disabled="" type="checkbox"> 二叉树应用: 技术</li>
+<li><input checked="" disabled="" type="checkbox"> 树&#x2F;森林 和 二叉树转换</li>
+<li><input checked="" disabled="" type="checkbox"> 哈夫曼树的构建<ul>
+<li><input checked="" disabled="" type="checkbox"> 哈夫曼编码，求加权路径长度</li>
+</ul>
+</li>
+</ul>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a><a href="/notes/%E5%9B%BE">图</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 图的定义、存储结构 !!</li>
+<li><input checked="" disabled="" type="checkbox"> 图的遍历（广搜，深搜）</li>
+<li><input checked="" disabled="" type="checkbox"> Prim 构建最小生成树</li>
+<li><input checked="" disabled="" type="checkbox"> 拓扑排序实现过程 !!</li>
+<li><input checked="" disabled="" type="checkbox"> 关键路径实现 !!<ul>
+<li><input checked="" disabled="" type="checkbox"> 给出各事件最早、最晚开始时间，路径上各活动最早、最晚开始时间</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 最短路径实现过程</li>
+</ul>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a><a href="/notes/%E6%9F%A5%E6%89%BE">查找</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 顺序表查找、折半查找</li>
+<li><input checked="" disabled="" type="checkbox"> 二叉排序树查找、插入、删除过程</li>
+<li><input disabled="" type="checkbox"> 构造平衡二叉树</li>
+<li><input disabled="" type="checkbox"> B- 树构建、实现 !!</li>
+<li><input checked="" disabled="" type="checkbox"> 基于哈希函数构建哈希表（散列表） !!<ul>
+<li><input checked="" disabled="" type="checkbox"> 除留余数法解决冲突</li>
+<li><input checked="" disabled="" type="checkbox"> 线性深测处理</li>
+<li><input checked="" disabled="" type="checkbox"> 二次深测处理</li>
+</ul>
+</li>
+</ul>
+<h3 id="内排序"><a href="#内排序" class="headerlink" title="内排序"></a><a href="/notes/%E6%8E%92%E5%BA%8F">内排序</a></h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 直接插入、折半插入、希尔排序</li>
+<li><input disabled="" type="checkbox"> 冒泡、快速排序</li>
+<li><input disabled="" type="checkbox"> 直接选择、堆排序</li>
+<li><input checked="" disabled="" type="checkbox"> 归并排序</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/11/2023-06-11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" data-id="cm2aewu5e002zpcjv0cvc8nzw" data-title="数据结构期末复习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="posts-2023-02-16-Git-基本流程" class="h-entry article article-type-posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/16/2023-02-16-Git-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-02-16T07:27:28.000Z" itemprop="datePublished">2023-02-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/16/2023-02-16-Git-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/">Git 基本指令记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-基本指令"><a href="#Git-基本指令" class="headerlink" title="Git 基本指令"></a>Git 基本指令</h1><hr>
+<h2 id="1-将远程仓库弄到本地"><a href="#1-将远程仓库弄到本地" class="headerlink" title="1. 将远程仓库弄到本地"></a>1. 将远程仓库弄到本地</h2><h3 id="1-0-将远程仓库克隆到本地-git-clone-xxx"><a href="#1-0-将远程仓库克隆到本地-git-clone-xxx" class="headerlink" title="1.0. 将远程仓库克隆到本地 git clone xxx"></a>1.0. 将远程仓库克隆到本地 <code>git clone xxx</code></h3><blockquote>
+<p>当本地没有该仓库时</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone xxxx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">xxxx: 仓库地址（可以是 `https://xxx.git`, 也可以是 ssh 连接 `git@githubxxx`）</span></span><br><span class="line">e.g.:  git clone git@github.com:ChrisVicky/TJU-2022-Socket-Computer-Network-Lab.git</span><br></pre></td></tr></table></figure>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-16-22-56-41.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">example</div>
+</center>
+
+<ul>
+<li>会在本地生成一个目录，包含这个仓库</li>
+</ul>
+<h3 id="1-1-将远程同步到本地仓库-git-pull"><a href="#1-1-将远程同步到本地仓库-git-pull" class="headerlink" title="1.1. 将远程同步到本地仓库 git pull"></a>1.1. 将远程同步到本地仓库 <code>git pull</code></h3><blockquote>
+<ul>
+<li>当本地有该仓库时</li>
+<li>每次开始对该仓库内文件修改之前都需要进行</li>
+</ul>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-做一些修改"><a href="#2-做一些修改" class="headerlink" title="2. 做一些修改"></a>2. 做一些修改</h2><h2 id="3-查看仓库状态-git-status"><a href="#3-查看仓库状态-git-status" class="headerlink" title="3. 查看仓库状态 git status"></a>3. 查看仓库状态 <code>git status</code></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">❯ git status </span><br><span class="line">On branch main ==&gt; 在主分支（*分支）</span><br><span class="line">Your branch is up to date with &#x27;origin/main&#x27;. ==&gt; 与远程的 `origin/main` 分支的情况 （*远程分支）</span><br><span class="line"></span><br><span class="line">Untracked files:  ==&gt; 哪些文件没有被 跟踪 （*track）</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">        something</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br><span class="line">  ==&gt; 总结当前的状况</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">❯ git status</span><br><span class="line">On branch main</span><br><span class="line">Your branch is up to date with &#x27;origin/main&#x27;.</span><br><span class="line"></span><br><span class="line">Changes to be committed:  ==&gt; 当前有没有被“提交的” 内容 （*commit）</span><br><span class="line">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span><br><span class="line">        new file:   something</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如何建立一个“版本”， git 是一个版本控制软件。一个版本就是一个 commit, 一个 commit 中需要 track 多个 changes, 每个 changes 和一个文件绑定</p>
+</blockquote>
+<pre><code>  ┌───────────┐     git add   ┌────────────┐    git commit  ┌───────────┐
+  │file change│──────────────►│file tracked│───────────────►│file commit│
+  └───────────┘               └────────────┘                └───────────┘
+                                                              新版本诞生
+</code></pre>
+<h2 id="4-添加到仓库-git-add"><a href="#4-添加到仓库-git-add" class="headerlink" title="4. 添加到仓库 git add &lt;file&gt;"></a>4. 添加到仓库 <code>git add &lt;file&gt;</code></h2><h2 id="5-提交到仓库-git-commit"><a href="#5-提交到仓库-git-commit" class="headerlink" title="5. 提交到仓库 git commit"></a>5. 提交到仓库 <code>git commit</code></h2><ul>
+<li>需要对提交进行描述<center>
+<img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+  src="/img/image_2023-02-16-23-08-13.png"><br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">git commit</div>
+</center></li>
+</ul>
+<h2 id="6-提交到远程分支-git-push"><a href="#6-提交到远程分支-git-push" class="headerlink" title="6. 提交到远程分支 git push"></a>6. 提交到远程分支 <code>git push</code></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/16/2023-02-16-Git-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/" data-id="cm2aewu5e0033pcjv0izm1f2k" data-title="Git 基本指令记录" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2023-02-15-TJU-快速评教脚本" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/15/2023-02-15-TJU-%E5%BF%AB%E9%80%9F%E8%AF%84%E6%95%99%E8%84%9A%E6%9C%AC/" class="article-date">
+  <time class="dt-published" datetime="2023-02-15T04:41:03.000Z" itemprop="datePublished">2023-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/15/2023-02-15-TJU-%E5%BF%AB%E9%80%9F%E8%AF%84%E6%95%99%E8%84%9A%E6%9C%AC/">TJU-快速评教</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/TJU-2023-Evaluator">GitHub Repo</a></li>
+<li>本程序只是为了玩一玩 <a target="_blank" rel="noopener" href="https://playwright.dev/"><code>PlayWright</code></a>，并不是为了提高评教速度。</li>
+</ul>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="1-校外使用-连接-TJU-的-VPN"><a href="#1-校外使用-连接-TJU-的-VPN" class="headerlink" title="1.  校外使用 连接 TJU 的 VPN"></a>1.  <em>校外使用</em> 连接 TJU 的 VPN</h3><blockquote>
+<p>校内登录无需此步骤</p>
+</blockquote>
+<ol>
+<li><p>打开 <a target="_blank" rel="noopener" href="https://www.sangfor.com.cn/"><code>easyconnect</code></a></p>
+<blockquote>
+<p>Arch Linux 用户可以在 <code>aur</code> 上找到。</p>
+</blockquote>
+</li>
+<li><p>输入天津大学 VPN 地址 <code>https://vpn.tju.edu.cn</code>并点击按钮。</p>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+ src="/img/image_2023-02-13-21-08-36.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">输入天津大学VPN</div>
+</center>
+</li>
+<li><p>输入 VPN 帐号密码。</p>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+ src="/img/image_2023-02-13-21-08-48.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">输入帐号密码</div>
+</center>
+</li>
+<li><p>登录完成。</p>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+   src="/img/image_2023-02-13-21-09-56.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">登录完成</div>
+</center></li>
+</ol>
+<h3 id="2-安装环境"><a href="#2-安装环境" class="headerlink" title="2. 安装环境"></a>2. 安装环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tju</span><br><span class="line">conda activate tju</span><br><span class="line">conda install pip </span><br><span class="line">pip install -r requirement.txt</span><br><span class="line">playwright install chromium</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-查看并填写配置文件"><a href="#3-查看并填写配置文件" class="headerlink" title="3. 查看并填写配置文件"></a>3. 查看并填写配置文件</h3><ul>
+<li>创建 <code>cfg</code> 文件<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp account.cfg.example account.cfg</span><br></pre></td></tr></table></figure></li>
+<li>修改之<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[account]</span><br><span class="line"># USERNAME: 学号</span><br><span class="line">USERNAME = xxxxxxxx</span><br><span class="line"># PASSWORD: 密码</span><br><span class="line">PASSWORD = xxxxxxxx</span><br><span class="line"></span><br><span class="line"># 是否启用 Headless Mode</span><br><span class="line"># True: 启用 Headless Mode --&gt; 不显示 UI</span><br><span class="line"># False: 不启用 Headless Mode  --&gt; 显示 UI</span><br><span class="line">HEADLESS = False</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-运行代码"><a href="#4-运行代码" class="headerlink" title="4. 运行代码"></a>4. 运行代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure>
+
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-13-21-26-22.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">执行效果</div>
+</center>
+
+<h2 id="关于-playwright"><a href="#关于-playwright" class="headerlink" title="关于 playwright"></a>关于 <code>playwright</code></h2><ul>
+<li><code>PlayWright</code> 有录制功能，能够快速生成脚本，提升开发速度。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m playwright codegen</span><br></pre></td></tr></table></figure>
+<center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-15-12-47-47.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">Playwright Codegen</div>
+</center>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/15/2023-02-15-TJU-%E5%BF%AB%E9%80%9F%E8%AF%84%E6%95%99%E8%84%9A%E6%9C%AC/" data-id="cm2aewu5b0012pcjvckgyca3y" data-title="TJU-快速评教" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TJU/" rel="tag">TJU</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playwright/" rel="tag">playwright</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%84%E6%95%99/" rel="tag">评教</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="paperreview-2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields" class="h-entry article article-type-paperreview" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/07/2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields/" class="article-date">
+  <time class="dt-published" datetime="2023-02-07T04:28:41.000Z" itemprop="datePublished">2023-02-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PaperReview/">PaperReview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/07/2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields/">Paper Review: OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-07-13-07-25.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">Title</div>
+</center>
+
+<ul>
+<li>Cite: Cao Z, Simon T, Wei S E, et al. Realtime multi-person 2d pose estimation using part affinity fields[C]&#x2F;&#x2F;Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 7291-7299.</li>
+<li>Available Online: <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1812.08008.pdf">https://arxiv.org/pdf/1812.08008.pdf</a></li>
+<li>Official Implementation: <a target="_blank" rel="noopener" href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a></li>
+<li>Demo based on OpenCV Implementation: <a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/OpenCV-OpenPose-Demo">https://github.com/ChrisVicky/OpenCV-OpenPose-Demo</a></li>
+<li>Date: 2023-02-07</li>
+</ul>
+<h2 id="Brief-summary"><a href="#Brief-summary" class="headerlink" title="Brief summary"></a>Brief summary</h2><center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-07-12-56-13.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">Main Architecture</div>
+</center>
+
+<ul>
+<li><p>What is the problem the paper is trying to solve?</p>
+<ul>
+<li>The Speed-up of Multi-Person Pose Estimation Process, the foundation of many behavior-recognizers.</li>
+</ul>
+</li>
+<li><p>What are the key ideas of the paper? Key insights?</p>
+<ul>
+<li>Process all people at once.</li>
+<li>Part Affinity Fields (PAF).<center>
+<img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+src="/img/image_2023-02-07-12-33-02.png"><br>
+<img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+src="/img/image_2023-02-07-12-34-55.png"><br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">PAF Definition</div>
+</center></li>
+</ul>
+</li>
+<li><p>What is the key contribution to the literature at the time it was written?</p>
+<ul>
+<li>The fastest and most accurate model that recognizes pose information is proposed and implemented by the authors.</li>
+<li>A New Method that utilizing PAF is presented.</li>
+</ul>
+</li>
+<li><p>What are the most important things you take out from it?</p>
+<ul>
+<li>The idea that using PAF to pair up feature points that belong to one person.</li>
+<li>The Bottom-Top methodology could reduce redundancy produced by single person recognition in Top-Bottom Methods.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Strengths-Most-Important-Ones"><a href="#Strengths-Most-Important-Ones" class="headerlink" title="Strengths (Most Important Ones)"></a>Strengths (Most Important Ones)</h2><ul>
+<li>Does the paper solve the problem well?<ul>
+<li>I suppose yes. The paper presents a higher accuracy compared to other models at that time. And According to my own implementation, the paper wins as well.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Weaknesses-Most-Important-Ones"><a href="#Weaknesses-Most-Important-Ones" class="headerlink" title="Weaknesses (Most Important Ones)"></a>Weaknesses (Most Important Ones)</h2><ul>
+<li>Room for improvement.<ul>
+<li>The pair-up process currently is implemented according to an algorithm after the neural network which, in my opinion, could be merged in the network structure.</li>
+</ul>
+</li>
+</ul>
+<h2 id="How-can-we-do-better-Your-ideas-and-thoughts"><a href="#How-can-we-do-better-Your-ideas-and-thoughts" class="headerlink" title="How can we do better? Your ideas and thoughts."></a>How can we do better? Your ideas and thoughts.</h2><ul>
+<li>The method relies on a VGG Model that recognizes feature points which can be separated from the main part. Therefore, during video processing where there is a sequence of image data, a pipeline processing structure could be introduced to further improve the efficiency.</li>
+<li>Also, since <em>VIT</em>, we may replace the Convolutional Neural Network with <strong>Transformer</strong>.</li>
+</ul>
+<h2 id="What-have-you-learnt-enjoyed-disliked-in-the-paper-Why"><a href="#What-have-you-learnt-enjoyed-disliked-in-the-paper-Why" class="headerlink" title="What have you learnt&#x2F;enjoyed&#x2F;disliked in the paper? Why?"></a>What have you learnt&#x2F;enjoyed&#x2F;disliked in the paper? Why?</h2><ul>
+<li>The bottom-up methodology is the most enjoyed idea. However, the feature extractor on the top still presents a Top-Bottom methodology that, in one hand, does reduce the difficulty of development, but on the other hand betrays the Bottom-Top methodology since the model is topped by a feature extractor.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/07/2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields/" data-id="cm2aewu5b0014pcjvhh73hpt1" data-title="Paper Review: OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/" rel="tag">ML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenPose/" rel="tag">OpenPose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PAF/" rel="tag">PAF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PaperReview/" rel="tag">PaperReview</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pose-Estimation/" rel="tag">Pose Estimation</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperReview/">PaperReview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Post/">Post</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KinectV2/" rel="tag">KinectV2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/" rel="tag">ML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenPose/" rel="tag">OpenPose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAF/" rel="tag">PAF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PaperReview/" rel="tag">PaperReview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance-Improve/" rel="tag">Performance Improve</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pose-Estimation/" rel="tag">Pose Estimation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemd/" rel="tag">Systemd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TJU/" rel="tag">TJU</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tranformer/" rel="tag">Tranformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViT/" rel="tag">ViT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playwright/" rel="tag">playwright</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" rel="tag">課程作業</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E6%95%99/" rel="tag">评教</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/Big-Data/" style="font-size: 10px;">Big Data</a> <a href="/tags/Clash/" style="font-size: 10px;">Clash</a> <a href="/tags/DIY/" style="font-size: 10px;">DIY</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/KinectV2/" style="font-size: 10px;">KinectV2</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/ML/" style="font-size: 10px;">ML</a> <a href="/tags/OpenPose/" style="font-size: 10px;">OpenPose</a> <a href="/tags/Opencv/" style="font-size: 10px;">Opencv</a> <a href="/tags/PAF/" style="font-size: 10px;">PAF</a> <a href="/tags/PaperReview/" style="font-size: 10px;">PaperReview</a> <a href="/tags/Performance-Improve/" style="font-size: 10px;">Performance Improve</a> <a href="/tags/Pose-Estimation/" style="font-size: 10px;">Pose Estimation</a> <a href="/tags/Systemd/" style="font-size: 10px;">Systemd</a> <a href="/tags/TJU/" style="font-size: 10px;">TJU</a> <a href="/tags/Tranformer/" style="font-size: 10px;">Tranformer</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/ViT/" style="font-size: 10px;">ViT</a> <a href="/tags/learn/" style="font-size: 15px;">learn</a> <a href="/tags/playwright/" style="font-size: 10px;">playwright</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 10px;">期末复习</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" style="font-size: 10px;">課程作業</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 15px;">记录</a> <a href="/tags/%E8%AF%84%E6%95%99/" style="font-size: 10px;">评教</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/">KinectV2 Camera Calibration and `Yolov5` Recognition</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-15-deploy-hadoop/">Deploy Hadoop with VirtualBox</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/">Add Extra Memory to Thinkpad T14</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/">Source Backup for Disk Update</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/2023-09-25-Github-Image-Bed/">Github Image Bed</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

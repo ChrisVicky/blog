@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Paper Review: OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Title    Cite: Cao Z, Simon T, Wei S E, et al. Realtime multi-person 2d pose estimation using part affinity fields[C]&#x2F;&#x2F;Proceedings of the IEEE conference on computer vision and pattern">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paper Review: OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields">
+<meta property="og:url" content="http://example.com/2023/02/07/2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Title    Cite: Cao Z, Simon T, Wei S E, et al. Realtime multi-person 2d pose estimation using part affinity fields[C]&#x2F;&#x2F;Proceedings of the IEEE conference on computer vision and pattern">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/image_2023-02-07-13-07-25.png">
+<meta property="og:image" content="http://example.com/img/image_2023-02-07-12-56-13.png">
+<meta property="og:image" content="http://example.com/img/image_2023-02-07-12-33-02.png">
+<meta property="og:image" content="http://example.com/img/image_2023-02-07-12-34-55.png">
+<meta property="article:published_time" content="2023-02-07T04:28:41.000Z">
+<meta property="article:modified_time" content="2024-10-15T12:21:14.246Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="PaperReview">
+<meta property="article:tag" content="OpenPose">
+<meta property="article:tag" content="Pose Estimation">
+<meta property="article:tag" content="PAF">
+<meta property="article:tag" content="ML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/image_2023-02-07-13-07-25.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="paperreview-2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields" class="h-entry article article-type-paperreview" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/07/2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields/" class="article-date">
+  <time class="dt-published" datetime="2023-02-07T04:28:41.000Z" itemprop="datePublished">2023-02-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PaperReview/">PaperReview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Paper Review: OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-07-13-07-25.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">Title</div>
+</center>
+
+<ul>
+<li>Cite: Cao Z, Simon T, Wei S E, et al. Realtime multi-person 2d pose estimation using part affinity fields[C]&#x2F;&#x2F;Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 7291-7299.</li>
+<li>Available Online: <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1812.08008.pdf">https://arxiv.org/pdf/1812.08008.pdf</a></li>
+<li>Official Implementation: <a target="_blank" rel="noopener" href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a></li>
+<li>Demo based on OpenCV Implementation: <a target="_blank" rel="noopener" href="https://github.com/ChrisVicky/OpenCV-OpenPose-Demo">https://github.com/ChrisVicky/OpenCV-OpenPose-Demo</a></li>
+<li>Date: 2023-02-07</li>
+</ul>
+<h2 id="Brief-summary"><a href="#Brief-summary" class="headerlink" title="Brief summary"></a>Brief summary</h2><center>
+  <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="/img/image_2023-02-07-12-56-13.png"><br>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">Main Architecture</div>
+</center>
+
+<ul>
+<li><p>What is the problem the paper is trying to solve?</p>
+<ul>
+<li>The Speed-up of Multi-Person Pose Estimation Process, the foundation of many behavior-recognizers.</li>
+</ul>
+</li>
+<li><p>What are the key ideas of the paper? Key insights?</p>
+<ul>
+<li>Process all people at once.</li>
+<li>Part Affinity Fields (PAF).<center>
+<img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+src="/img/image_2023-02-07-12-33-02.png"><br>
+<img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+src="/img/image_2023-02-07-12-34-55.png"><br>
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">PAF Definition</div>
+</center></li>
+</ul>
+</li>
+<li><p>What is the key contribution to the literature at the time it was written?</p>
+<ul>
+<li>The fastest and most accurate model that recognizes pose information is proposed and implemented by the authors.</li>
+<li>A New Method that utilizing PAF is presented.</li>
+</ul>
+</li>
+<li><p>What are the most important things you take out from it?</p>
+<ul>
+<li>The idea that using PAF to pair up feature points that belong to one person.</li>
+<li>The Bottom-Top methodology could reduce redundancy produced by single person recognition in Top-Bottom Methods.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Strengths-Most-Important-Ones"><a href="#Strengths-Most-Important-Ones" class="headerlink" title="Strengths (Most Important Ones)"></a>Strengths (Most Important Ones)</h2><ul>
+<li>Does the paper solve the problem well?<ul>
+<li>I suppose yes. The paper presents a higher accuracy compared to other models at that time. And According to my own implementation, the paper wins as well.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Weaknesses-Most-Important-Ones"><a href="#Weaknesses-Most-Important-Ones" class="headerlink" title="Weaknesses (Most Important Ones)"></a>Weaknesses (Most Important Ones)</h2><ul>
+<li>Room for improvement.<ul>
+<li>The pair-up process currently is implemented according to an algorithm after the neural network which, in my opinion, could be merged in the network structure.</li>
+</ul>
+</li>
+</ul>
+<h2 id="How-can-we-do-better-Your-ideas-and-thoughts"><a href="#How-can-we-do-better-Your-ideas-and-thoughts" class="headerlink" title="How can we do better? Your ideas and thoughts."></a>How can we do better? Your ideas and thoughts.</h2><ul>
+<li>The method relies on a VGG Model that recognizes feature points which can be separated from the main part. Therefore, during video processing where there is a sequence of image data, a pipeline processing structure could be introduced to further improve the efficiency.</li>
+<li>Also, since <em>VIT</em>, we may replace the Convolutional Neural Network with <strong>Transformer</strong>.</li>
+</ul>
+<h2 id="What-have-you-learnt-enjoyed-disliked-in-the-paper-Why"><a href="#What-have-you-learnt-enjoyed-disliked-in-the-paper-Why" class="headerlink" title="What have you learnt&#x2F;enjoyed&#x2F;disliked in the paper? Why?"></a>What have you learnt&#x2F;enjoyed&#x2F;disliked in the paper? Why?</h2><ul>
+<li>The bottom-up methodology is the most enjoyed idea. However, the feature extractor on the top still presents a Top-Bottom methodology that, in one hand, does reduce the difficulty of development, but on the other hand betrays the Bottom-Top methodology since the model is topped by a feature extractor.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/07/2023-02-07-OpenPose-Realtime-Multi-Person-2D-Pose-Estimation-using-Part-Affinity-Fields/" data-id="cm2aewu5b0014pcjvhh73hpt1" data-title="Paper Review: OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/" rel="tag">ML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenPose/" rel="tag">OpenPose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PAF/" rel="tag">PAF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PaperReview/" rel="tag">PaperReview</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pose-Estimation/" rel="tag">Pose Estimation</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/15/2023-02-15-TJU-%E5%BF%AB%E9%80%9F%E8%AF%84%E6%95%99%E8%84%9A%E6%9C%AC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TJU-快速评教
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/16/2023-01-16-An-Image-is-Worth-16x16-Words/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Paper Review: An Image is Worth 16x16 Words</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperReview/">PaperReview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Post/">Post</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KinectV2/" rel="tag">KinectV2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/" rel="tag">ML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenPose/" rel="tag">OpenPose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAF/" rel="tag">PAF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PaperReview/" rel="tag">PaperReview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance-Improve/" rel="tag">Performance Improve</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pose-Estimation/" rel="tag">Pose Estimation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemd/" rel="tag">Systemd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TJU/" rel="tag">TJU</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tranformer/" rel="tag">Tranformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViT/" rel="tag">ViT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playwright/" rel="tag">playwright</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" rel="tag">課程作業</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E6%95%99/" rel="tag">评教</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/Big-Data/" style="font-size: 10px;">Big Data</a> <a href="/tags/Clash/" style="font-size: 10px;">Clash</a> <a href="/tags/DIY/" style="font-size: 10px;">DIY</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/KinectV2/" style="font-size: 10px;">KinectV2</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/ML/" style="font-size: 10px;">ML</a> <a href="/tags/OpenPose/" style="font-size: 10px;">OpenPose</a> <a href="/tags/Opencv/" style="font-size: 10px;">Opencv</a> <a href="/tags/PAF/" style="font-size: 10px;">PAF</a> <a href="/tags/PaperReview/" style="font-size: 10px;">PaperReview</a> <a href="/tags/Performance-Improve/" style="font-size: 10px;">Performance Improve</a> <a href="/tags/Pose-Estimation/" style="font-size: 10px;">Pose Estimation</a> <a href="/tags/Systemd/" style="font-size: 10px;">Systemd</a> <a href="/tags/TJU/" style="font-size: 10px;">TJU</a> <a href="/tags/Tranformer/" style="font-size: 10px;">Tranformer</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/ViT/" style="font-size: 10px;">ViT</a> <a href="/tags/learn/" style="font-size: 15px;">learn</a> <a href="/tags/playwright/" style="font-size: 10px;">playwright</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 10px;">期末复习</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" style="font-size: 10px;">課程作業</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 15px;">记录</a> <a href="/tags/%E8%AF%84%E6%95%99/" style="font-size: 10px;">评教</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/">KinectV2 Camera Calibration and `Yolov5` Recognition</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-15-deploy-hadoop/">Deploy Hadoop with VirtualBox</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/">Add Extra Memory to Thinkpad T14</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/">Source Backup for Disk Update</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/2023-09-25-Github-Image-Bed/">Github Image Bed</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

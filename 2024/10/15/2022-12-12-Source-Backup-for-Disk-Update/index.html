@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Source Backup for Disk Update | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Background 作为大学生，只有一台 Thinkpad T14 Gen 1 的笔记本却安装了 Arch Linux，而由于课程需要仍保留了大部分 Windows 11 的系统，长期以来的使用，让 512 GB 的存储空间告急，于是打算更换一块 1T 的固态硬盘。在此对磁盘更换做一个记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Source Backup for Disk Update">
+<meta property="og:url" content="http://example.com/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Background 作为大学生，只有一台 Thinkpad T14 Gen 1 的笔记本却安装了 Arch Linux，而由于课程需要仍保留了大部分 Windows 11 的系统，长期以来的使用，让 512 GB 的存储空间告急，于是打算更换一块 1T 的固态硬盘。在此对磁盘更换做一个记录。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-15T12:21:14.245Z">
+<meta property="article:modified_time" content="2024-10-15T12:21:14.245Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="记录">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2022-12-12-Source-Backup-for-Disk-Update" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T12:21:14.245Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Post/">Post</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Source Backup for Disk Update
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><ul>
+<li>作为大学生，只有一台 Thinkpad T14 Gen 1 的笔记本却安装了 Arch Linux，而由于课程需要仍保留了大部分 Windows 11 的系统，长期以来的使用，让 512 GB 的存储空间告急，于是打算更换一块 1T 的固态硬盘。在此对磁盘更换做一个记录。</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><ul>
+<li><p>第一大类：系统文件，</p>
+<ul>
+<li>如 Windows 等 Operating Systems 的文件</li>
+<li>不考虑保存，但需要先查清除如何对 Windows 11 下的 Office 全家桶进行恢复。</li>
+</ul>
+</li>
+<li><p>第二大类：工程文件；</p>
+<ul>
+<li>2-1. 项目、代码等<ul>
+<li>存入 github 代码库，将不必要保存的 tmp 文件删除</li>
+<li>写好 README 文档</li>
+</ul>
+</li>
+<li>2-2. 安装包、dependency<ul>
+<li>丢弃，实际使用时再安装</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>第三大类：资源文件：</p>
+<ul>
+<li>3-1. 课程文件等<ul>
+<li>打包按时间排序</li>
+<li>项目类文件保存两份</li>
+</ul>
+</li>
+<li>3-2. 配置文件<ul>
+<li>重要配置打包或上传 github</li>
+</ul>
+</li>
+<li>3-3. 字体<ul>
+<li>不能打包，但需要确定安装和配置方案</li>
+</ul>
+</li>
+<li>3-3. 其他资源<ul>
+<li>写个 README</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h3><ol>
+<li><p>文件备份</p>
+<ul>
+<li>根据上述分类进行备份</li>
+<li>2022-12-12 23:38 DONE</li>
+</ul>
+</li>
+<li><p>确定安装和磁盘分区</p>
+<ul>
+<li>安装 512 GB 的 Windows 11 系统 和 512 GB 的 Linux 系统 </li>
+<li>Linux 安装 DWM + Xorg （需要先写好安装文档以便查看）</li>
+</ul>
+</li>
+<li><p>购置固态硬盘</p>
+<ul>
+<li>选取三星 “980 Pro PCIe 4.0 NVMe M.2”</li>
+<li>2022-12-12 23:38 次日到貨</li>
+</ul>
+</li>
+<li><p>对需要安装的系统和软件、配置写教程</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>待安装（配置）的内容</th>
+<th>教程</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Arch Linux</td>
+<td><a target="_blank" rel="noopener" href="https://www.viseator.com/2017/05/17/arch_install/">viseator的博客</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dwm</td>
+<td></td>
+<td>拷贝文件即可, 应当包括 autostart</td>
+</tr>
+<tr>
+<td>dmenu</td>
+<td></td>
+<td>同上</td>
+</tr>
+<tr>
+<td>vim &#x2F; nvim</td>
+<td></td>
+<td>同上</td>
+</tr>
+<tr>
+<td>中文输入法</td>
+<td><a target="_blank" rel="noopener" href="https://www.viseator.com/2017/07/02/arch_more/">中文輸入法等安裝</a></td>
+<td></td>
+</tr>
+<tr>
+<td>yay</td>
+<td><a target="_blank" rel="noopener" href="https://aur.archlinux.org/yay.git">yay git repo</a></td>
+<td></td>
+</tr>
+<tr>
+<td>clash</td>
+<td><a target="_blank" rel="noopener" href="https://chrisvicky.github.io/2022/12/09/Setup-Systemd-for-clash-Proxy/">我的博客</a></td>
+<td></td>
+</tr>
+<tr>
+<td>navicat</td>
+<td></td>
+<td>已經完成拷貝</td>
+</tr>
+<tr>
+<td>apifox</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vivado</td>
+<td><a target="_blank" rel="noopener" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html">Vivado HLx 2019.2: All OS installer Single-File Download (TAR&#x2F;GZIP - 26.55 GB)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>libfreenect2</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/OpenKinect/libfreenect2">libfreenect2 Github</a>!!</td>
+<td>十分重要</td>
+</tr>
+<tr>
+<td>opencv</td>
+<td></td>
+<td>yay 将就用一下先</td>
+</tr>
+<tr>
+<td>virtualbox</td>
+<td><a target="_blank" rel="noopener" href="https://chrisvicky.github.io/2022/11/15/deploy-hadoop/">我的博客</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/" data-id="cm2aewu5a000rpcjvckux8bov" data-title="Source Backup for Disk Update" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Add Extra Memory to Thinkpad T14
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/09/25/2023-09-25-Github-Image-Bed/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Github Image Bed</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperReview/">PaperReview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Post/">Post</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clash/" rel="tag">Clash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hardware/" rel="tag">Hardware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KinectV2/" rel="tag">KinectV2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/" rel="tag">ML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenPose/" rel="tag">OpenPose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAF/" rel="tag">PAF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PaperReview/" rel="tag">PaperReview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance-Improve/" rel="tag">Performance Improve</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pose-Estimation/" rel="tag">Pose Estimation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Systemd/" rel="tag">Systemd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TJU/" rel="tag">TJU</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tranformer/" rel="tag">Tranformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ViT/" rel="tag">ViT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">learn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playwright/" rel="tag">playwright</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" rel="tag">課程作業</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%84%E6%95%99/" rel="tag">评教</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/Big-Data/" style="font-size: 10px;">Big Data</a> <a href="/tags/Clash/" style="font-size: 10px;">Clash</a> <a href="/tags/DIY/" style="font-size: 10px;">DIY</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/Hardware/" style="font-size: 10px;">Hardware</a> <a href="/tags/KinectV2/" style="font-size: 10px;">KinectV2</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/ML/" style="font-size: 10px;">ML</a> <a href="/tags/OpenPose/" style="font-size: 10px;">OpenPose</a> <a href="/tags/Opencv/" style="font-size: 10px;">Opencv</a> <a href="/tags/PAF/" style="font-size: 10px;">PAF</a> <a href="/tags/PaperReview/" style="font-size: 10px;">PaperReview</a> <a href="/tags/Performance-Improve/" style="font-size: 10px;">Performance Improve</a> <a href="/tags/Pose-Estimation/" style="font-size: 10px;">Pose Estimation</a> <a href="/tags/Systemd/" style="font-size: 10px;">Systemd</a> <a href="/tags/TJU/" style="font-size: 10px;">TJU</a> <a href="/tags/Tranformer/" style="font-size: 10px;">Tranformer</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/ViT/" style="font-size: 10px;">ViT</a> <a href="/tags/learn/" style="font-size: 15px;">learn</a> <a href="/tags/playwright/" style="font-size: 10px;">playwright</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 10px;">期末复习</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E8%AA%B2%E7%A8%8B%E4%BD%9C%E6%A5%AD/" style="font-size: 10px;">課程作業</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 15px;">记录</a> <a href="/tags/%E8%AF%84%E6%95%99/" style="font-size: 10px;">评教</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-30-KinectV2-Camera-Calibration-and-YoloV5-Recognition/">KinectV2 Camera Calibration and `Yolov5` Recognition</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-15-deploy-hadoop/">Deploy Hadoop with VirtualBox</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-11-18-Add-Extra-Memory-to-Thinkpad-T14/">Add Extra Memory to Thinkpad T14</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/15/2022-12-12-Source-Backup-for-Disk-Update/">Source Backup for Disk Update</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/25/2023-09-25-Github-Image-Bed/">Github Image Bed</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
